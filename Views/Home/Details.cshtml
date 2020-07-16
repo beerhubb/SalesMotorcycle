@@ -1,0 +1,56 @@
+﻿@model SalesMotorcycle.Models.Data_Motor
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Data_Motor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data_Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data_Time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Img)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data_Img)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status_item)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Status_item == "1")
+            {
+                <h3>มีสินค้า</h3>
+            }
+            else
+            {
+                <h3>สินค้าหมด</h3>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Buy" asp-route-id="@Model.Id" class="btn btn-outline-success">ซื้อสินค้า</a> &nbsp;
+    <a asp-action="Index" class="btn btn-outline-dark">Back to List</a>
+</div>
